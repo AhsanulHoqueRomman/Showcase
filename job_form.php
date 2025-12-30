@@ -1,7 +1,6 @@
 <?php
 session_start();
-$conn = new mysqli("localhost", "root", "", "showcase");
-if ($conn->connect_error) die("Connection failed: " . $conn->connect_error);
+include 'db.php';
 
 if (!isset($_SESSION['user_id'])) {
     echo "<div class='text-red-500 text-center'>❌ Login required</div>";

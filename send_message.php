@@ -1,6 +1,6 @@
 <?php
 session_start();
-$conn = new mysqli("localhost", "root", "", "showcase");
+include 'db.php';
 
 if (!isset($_SESSION['user_id'])) {
     exit(json_encode(['status' => 'error', 'message' => 'Unauthorized']));

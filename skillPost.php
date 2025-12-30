@@ -7,10 +7,7 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 // DB connection
-$conn = new mysqli("localhost", "root", "", "showcase");
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include 'db.php';
 
 $user_id = $_SESSION['user_id'];
 $post_id = $_GET['id'] ?? null;

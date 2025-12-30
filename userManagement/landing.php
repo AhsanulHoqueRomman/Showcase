@@ -7,10 +7,7 @@ session_set_cookie_params([
 session_start();
 
 // Database connection
-$conn = new mysqli("localhost", "root", "", "showcase");
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
+include '../db.php';
 
 // Initialize error variables
 $signup_error = "";
@@ -65,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $stmt->bind_result($id, $name, $hashed_password);
       $stmt->fetch();
 
-      if (password_verify($password, $hashed_password)) {
+      if ($hashed_password !== null && password_verify($password, $hashed_password)) {
         $_SESSION['user_id'] = $id;
         $_SESSION['user_name'] = $name;
 

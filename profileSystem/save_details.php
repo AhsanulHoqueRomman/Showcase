@@ -1,6 +1,6 @@
 <?php
 session_start();
-$conn = new mysqli("localhost", "root", "", "showcase");
+include '../db.php';
 
 $user_id = $_SESSION['user_id'];
 $section = $_POST['section'];

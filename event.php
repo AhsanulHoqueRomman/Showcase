@@ -8,10 +8,7 @@ if ($successMessage) {
 }
 
 // DB connection
-$conn = new mysqli("localhost", "root", "", "showcase");
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include 'db.php';
 
 if (!isset($_SESSION['user_id'])) {
     die("User not logged in.");

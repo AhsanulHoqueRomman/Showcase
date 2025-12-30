@@ -1,7 +1,6 @@
 <?php
 session_start();
-$conn = new mysqli("localhost", "root", "", "showcase");
-if ($conn->connect_error) die("DB error");
+include 'db.php';
 
 
 $user_id = $_SESSION['user_id'];

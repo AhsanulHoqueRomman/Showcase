@@ -2,10 +2,7 @@
 session_start();  // Start session to access session variables
 
 // DB connection
-$conn = new mysqli("localhost", "root", "", "showcase");
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include 'db.php';
 
 // Check if user is logged in
 if (!isset($_SESSION['user_id'])) {

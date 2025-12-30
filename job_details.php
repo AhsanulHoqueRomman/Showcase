@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$conn = new mysqli("localhost", "root", "", "showcase");
+include 'db.php';
 $id = $_GET['id'] ?? 0;
 $stmt = $conn->prepare("SELECT * FROM jobs WHERE id = ?");
 $stmt->bind_param("i", $id);
